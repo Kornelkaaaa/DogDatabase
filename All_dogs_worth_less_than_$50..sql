@@ -1,0 +1,3 @@
+SELECT D.DName
+FROM DOG AS D
+WHERE D.DPrice < 50;
