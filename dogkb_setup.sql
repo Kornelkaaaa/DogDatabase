@@ -96,4 +96,4 @@ INNER JOIN DOG AS D ON P.PID = D.PID
 WHERE S.SGPA = (
     SELECT MAX(SGPA) FROM STUDENT);
 
---Find all people who do NOT have a student record AND do NOT own any dogs
+
