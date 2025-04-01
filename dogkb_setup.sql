@@ -15,7 +15,7 @@ CREATE TABLE PERSON (
 CREATE TABLE DOG (
     DID INT NOT NULL PRIMARY KEY,
     DName VARCHAR(10),
-    DPrice DECIMAL(4,2),
+    DPrice DECIMAL(5,2),
     PID INT NOT NULL,
     FOREIGN KEY (PID) REFERENCES PERSON(PID)
 );
@@ -39,9 +39,9 @@ INSERT INTO PERSON (PID, PName, PDoB) VALUES
 INSERT INTO DOG (DID, DName, DPrice, PID) VALUES
 (1, 'Szczeki', 20.59, 5),
 (2, 'Tolate', 5.44, 3),
-(3, 'oszukaj', 88.00, 4),
-(4, 'suka', 69.20, 2),
-(5, 'fagata', 85.10, 1);
+(3, 'how', 88.00, 4),
+(4, 'sisi', 69.20, 2),
+(5, 'fagat', 85.10, 1);
 
 -- Check inserted data
 SELECT * FROM PERSON;
