@@ -73,3 +73,27 @@ SELECT P.PName, S.SGPA
 FROM PERSON AS P
 INNER JOIN STUDENT AS S ON P.PID = S.PID
 WHERE S.SGPA > 3.00; 
+
+-- All students and their dogs
+SELECT P.PName, D.DName
+FROM PERSON AS P
+INNER JOIN STUDENT AS S ON P.PID = S.PID
+LEFT JOIN DOG AS D ON P.PID = D.PID;
+
+--Who owns the most expensive dog, and how much does it cost?
+SELECT P.PName, D.DName, D.DPrice
+FROM PERSON AS P
+INNER JOIN DOG AS D ON P.PID = D.PID
+WHERE D.DPrice = 
+(SELECT MAX(DPrice)
+    FROM DOG);
+
+-- Which students have the highest GPA, and what dogs (if any) do they own?
+SELECT P.PName, S.SGPA, D.DName
+FROM PERSON AS P
+INNER JOIN STUDENT AS S ON P.PID = S.PID
+INNER JOIN DOG AS D ON P.PID = D.PID
+WHERE S.SGPA = (
+    SELECT MAX(SGPA) FROM STUDENT);
+
+--Find all people who do NOT have a student record AND do NOT own any dogs
