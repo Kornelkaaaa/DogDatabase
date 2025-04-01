@@ -46,3 +46,30 @@ INSERT INTO DOG (DID, DName, DPrice, PID) VALUES
 -- Check inserted data
 SELECT * FROM PERSON;
 SELECT * FROM DOG;
+
+-- Insert data into STUDENT
+INSERT INTO STUDENT (PID, SGPA) VALUES
+(3, 4.00),
+(4, 2.54), 
+(2, 3.84);
+
+-- All dogs worth less than $50.
+SELECT D.DName, D.DPrice
+FROM DOG as D
+WHERE D.DPrice < 50;
+
+-- The names of all students.
+SELECT P.PName
+FROM PERSON AS P
+INNER JOIN STUDENT AS S ON P.PID = S.PID;
+
+-- All people aged 19 or younger.
+SELECT * 
+FROM PERSON AS P
+WHERE P.PDoB > "2006-04-01";
+
+-- The names of all students with GPAs over 3.00
+SELECT P.PName, S.SGPA
+FROM PERSON AS P
+INNER JOIN STUDENT AS S ON P.PID = S.PID
+WHERE S.SGPA > 3.00; 
